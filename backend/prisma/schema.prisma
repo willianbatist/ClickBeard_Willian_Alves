@@ -10,14 +10,38 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
-  id          String    @id   @default(uuid())
-  name        String
-  email       String    @unique
-  password    String
-  role        String
-  created_at  DateTime  @default(now())
+  id                   String                 @id @default(uuid())
+  name                 String
+  email                String                 @unique
+  password             String
+  role                 String
+  created_at           DateTime               @default(now())
+  ScheduledAppointment ScheduledAppointment[]
 
   @@map("users")
+}
+
+model Barber {
+  id                   String                 @id @default(uuid())
+  name                 String
+  age                  Int
+  dateHire             DateTime
+  specialties          String[]
+  created_at           DateTime               @default(now())
+  updated_at           DateTime               @updatedAt
+  ScheduledAppointment ScheduledAppointment[]
+
+  @@map("barbers")
+}
+
+model ScheduledAppointment {
+  id                   String                 @id @default(uuid())
+  data                 DateTime
+  user                 User                   @relation(fields: [user_id], references: [id])
+  user_id              String
+  barber               Barber                 @relation(fields: [barber_id], references: [id])
+  barber_id            String
+
+  @@map("scheduled_appointment")
 }
