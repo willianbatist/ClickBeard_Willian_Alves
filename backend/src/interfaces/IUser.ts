@@ -11,3 +11,8 @@ export interface IUserModel {
   findUser(email: string): Promise<IUser | null>;
   createUser(data: IUser): Promise<IUser | null>;
 }
+
+export interface IUserService {
+  // findUser(email: string): Promise<IUser | null>;
+  createUser(data: IUser): Promise<IUser | null>;
+}
