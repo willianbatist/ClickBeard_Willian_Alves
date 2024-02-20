@@ -1,5 +1,6 @@
-import { IUser, IUserModel, IUserService } from "../interfaces/IUser";
+import { ILogin, IUser, IUserModel, IUserService } from "../interfaces/IUser";
 import bcrypt from "bcrypt";
+import generateJWT from "../utils/generateJWT";
 
 export default class UserService implements IUserService {
   constructor(private repository: IUserModel) {
@@ -18,4 +19,14 @@ export default class UserService implements IUserService {
     return createdUser;
   }
   
+  async login(data: ILogin) {
+    const user = await this.repository.findUser(data.email);
+    const userData = {
+      email: user?.email,
+      password: user?.password,
+      role: user?.role
+    }
+    const token = generateJWT(userData);
+    return { token, name: user?.name, email: user?.email };
+  }
 }
