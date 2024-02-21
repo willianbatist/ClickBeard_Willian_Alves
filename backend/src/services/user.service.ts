@@ -27,6 +27,6 @@ export default class UserService implements IUserService {
       role: user?.role
     }
     const token = generateJWT(userData);
-    return { token, name: user?.name, email: user?.email };
+    return { token, name: user?.name, email: user?.email, role: user?.role };
   }
 }
