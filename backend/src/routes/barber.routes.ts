@@ -9,4 +9,8 @@ barberRouter.post('/barber', validateJWT, validateRoleAdm, validateCreateBarber,
   BarberFactory().createBarber(req, res, next);
 })
 
+barberRouter.get('/barber', validateJWT, (req, res, next) => {
+  BarberFactory().findAll(req, res, next);
+})
+
 export default barberRouter;

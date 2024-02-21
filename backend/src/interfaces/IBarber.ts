@@ -10,8 +10,10 @@ export interface IBarber {
 
 export interface IBarberModel {
   create(data: IBarber): Promise<IBarber | null>;
+  findAll(): Promise<IBarber[] | []>;
 }
 
 export interface IBarberService {
   createBarber(data: IBarber): Promise<IBarber | null>;
+  findAll(): Promise<IBarber[] | []>;
 }

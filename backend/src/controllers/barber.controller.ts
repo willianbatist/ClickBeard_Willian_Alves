@@ -6,6 +6,15 @@ export default class BarberController {
     this.service = service;
   }
 
+  async findAll(req: Request, res: Response, _next: NextFunction) {
+    try {
+      const find = await this.service.findAll();
+      return res.status(200).json(find);
+    } catch (error: any) {
+      return res.status(400).json({ error: error.message });
+    }
+  }
+
   async createBarber(req: Request, res: Response, _next: NextFunction) {
     try {
       const create = await this.service.createBarber(req.body);
