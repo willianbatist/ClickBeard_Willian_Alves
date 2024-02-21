@@ -6,6 +6,13 @@ interface CustomRequest extends Request {
   payload?: jwt.JwtPayload;
 }
 
+const requestBodySchema = z.object({
+  name: z.string(),
+  age: z.number(),
+  dateHire: z.string(),
+  specialties: z.array(z.string()),
+});
+
 export async function validateRoleAdm(req: CustomRequest, res: Response, next: NextFunction) {
   try {
     const data = req.payload;
@@ -15,5 +22,14 @@ export async function validateRoleAdm(req: CustomRequest, res: Response, next: N
     next();
   } catch (error) {
     res.status(400).json({ message: 'invalid data', error });
+  }
+}
+
+export async function validateCreateBarber(req: Request, res: Response, next: NextFunction) {
+  try {
+    requestBodySchema.parse(req.body);
+    next();
+  } catch (error) {
+    return res.status(400).json({ message: 'invalid data', error });
   }
 }
