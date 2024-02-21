@@ -37,7 +37,7 @@ model Barber {
 
 model ScheduledAppointment {
   id                   String                 @id @default(uuid())
-  data                 DateTime
+  date                 DateTime
   user                 User                   @relation(fields: [user_id], references: [id])
   user_id              String
   barber               Barber                 @relation(fields: [barber_id], references: [id])

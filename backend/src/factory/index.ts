@@ -4,6 +4,9 @@ import UserController from "../controllers/user.controller";
 import BarberRepository from "../repositories/barber.repository";
 import BarberService from "../services/barber.service";
 import BarberController from "../controllers/barber.controller";
+import ScheduledAppointmentController from "../controllers/scheduledAppointment.controller";
+import ScheduledAppointmentRepository from "../repositories/scheduledAppointment.repository";
+import ScheduledAppointmentService from "../services/scheduledAppointment.service";
 
 export const UserFactory = () => {
   const repository = new UserRepository();
@@ -17,6 +20,14 @@ export const BarberFactory = () => {
   const repository = new BarberRepository();
   const service = new BarberService(repository);
   const controller = new BarberController(service);
+
+  return controller;
+}
+
+export const ScheduledAppointmentFactory = () => {
+  const repository = new ScheduledAppointmentRepository();
+  const service = new ScheduledAppointmentService(repository);
+  const controller = new ScheduledAppointmentController(service);
 
   return controller;
 }
