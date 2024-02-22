@@ -41,8 +41,8 @@ export const LoginContainer = styled.form`
   }
 
   @media (max-height: 700px) {
-    width: 300px;
-    height: 500px;
+    width: 400px;
+    height: 560px;
   }
 `;
 

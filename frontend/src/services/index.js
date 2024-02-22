@@ -17,4 +17,13 @@ export const requestLogin = async (endpoint, body) => {
   }
 };
 
+export const requestCreateUser = async (endpoint, body) => {
+  try {
+    const { data } = await api.post(endpoint, body);
+    return data;
+  } catch (error) {
+    return error
+  }
+};
+
 export default api;
