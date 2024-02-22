@@ -4,30 +4,16 @@ import "./styles/index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AppProvider from "./contexts/contextProvider";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App/>,
-    children: [
-      {
-        path: "/",
-        element: "",
-      }
-    ]
-  },
-]);
+import CustomChakraProvider from "./contexts/CustomChakraUi";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AppProvider>
-      <RouterProvider router={router} />
-    </AppProvider>
+    <CustomChakraProvider>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </CustomChakraProvider>
   </React.StrictMode>
 );
 

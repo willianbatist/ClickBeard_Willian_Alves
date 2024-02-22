@@ -1,13 +1,32 @@
-import { AppContext } from "./contexts/contextProvider";
-import { useContext } from 'react'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+
+const router = createBrowserRouter([
+  {
+    // path: "/",
+    // element: <App/>,
+    children: [
+      {
+        path: "/",
+        element: <Home/>,
+      },
+      {
+        path: "/login",
+        element: <Login/>,
+      }
+    ]
+  },
+]);
 
 function App() {
-  const { page } = useContext(AppContext);
-  console.log(page);
   return (
-    <div className="App">
-      <p>Estamos de volta</p>
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
