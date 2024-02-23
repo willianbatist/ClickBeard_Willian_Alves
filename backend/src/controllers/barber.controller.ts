@@ -6,6 +6,17 @@ export default class BarberController {
     this.service = service;
   }
 
+  async findUnique(req: Request, res: Response, _next: NextFunction) {
+    try {
+      const { id } = req.params;
+      console.log(id);
+      const find = await this.service.findUnique(id);
+      return res.status(200).json(find);
+    } catch (error) {
+      return res.status(400).json({ error });
+    }
+  }
+
   async findAll(req: Request, res: Response, _next: NextFunction) {
     try {
       const find = await this.service.findAll();

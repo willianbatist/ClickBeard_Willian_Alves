@@ -13,4 +13,8 @@ barberRouter.get('/barber', validateJWT, (req, res, next) => {
   BarberFactory().findAll(req, res, next);
 })
 
+barberRouter.get('/barber/:id', validateJWT, (req, res, next) => {
+  BarberFactory().findUnique(req, res, next);
+})
+
 export default barberRouter;

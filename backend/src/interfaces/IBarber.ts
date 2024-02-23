@@ -11,9 +11,11 @@ export interface IBarber {
 export interface IBarberModel {
   create(data: IBarber): Promise<IBarber | null>;
   findAll(): Promise<IBarber[] | []>;
+  findUnique(id: string): Promise<IBarber | null>;
 }
 
 export interface IBarberService {
   createBarber(data: IBarber): Promise<IBarber | null>;
   findAll(): Promise<IBarber[] | []>;
+  findUnique(id: string): Promise<IBarber | null>;
 }

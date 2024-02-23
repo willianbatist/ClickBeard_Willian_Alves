@@ -4,6 +4,10 @@ export default class BarberService implements IBarberService {
   constructor(private repository: IBarberModel) {
     this.repository = repository;
   }
+  async findUnique(id: string): Promise<IBarber | null> {
+    const find = await this.repository.findUnique(id);
+    return find
+  }
 
   async findAll(): Promise<[] | IBarber[]> {
     const find = await this.repository.findAll();
