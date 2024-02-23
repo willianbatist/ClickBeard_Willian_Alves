@@ -9,7 +9,6 @@ const AppProvider = ({ children }) => {
     user,
     setUser,
   }
-  console.log(user);
 
   return (
     <AppContext.Provider value={context}>{children}</AppContext.Provider>
