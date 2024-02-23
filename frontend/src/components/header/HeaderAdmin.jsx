@@ -1,22 +1,24 @@
 import { HeaderContainer, NavContainer } from "./headerAdmin.styles";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function HeaderAdmin() {
+  const navigate = useNavigate();
   return (
     <HeaderContainer>
       <NavContainer>
         <ul>
           <li>
-            <Link id="se" to="/">Barbeiros</Link>
+            <Link onClick={ () => navigate("/") }>Barbeiros</Link>
           </li>
           <li>
-            <Link>Agendamentos</Link>
+            <Link onClick={ () => navigate("/teste") }>Agendamentos</Link>
           </li>
           <li>
-            <Link to="register-barber">Cadastrar</Link>
+            <Link onClick={ () => navigate("/register-barber") }>Cadastrar</Link>
           </li>
           <li>
-            <Link to="/login">Sair</Link>
+            <Link onClick={ () => navigate("/login") }>Sair</Link>
           </li>
         </ul>
       </NavContainer>
