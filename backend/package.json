@@ -12,7 +12,10 @@
   },
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "main": "index.ts",
   "dependencies": {
     "@prisma/client": "^5.9.1",
     "acorn": "^8.11.3",
