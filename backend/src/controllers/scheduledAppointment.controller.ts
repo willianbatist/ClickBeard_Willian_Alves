@@ -6,6 +6,16 @@ export default class ScheduledAppointmentController {
     this.service = service;
   }
 
+  async findScheduledBarber(req: Request, res: Response, _next: NextFunction) {
+    try {
+      const { id } = req.params;
+      const find = await this.service.findScheduledBarber(id);
+      return find
+    } catch (error) {
+      return res.status(400).json(error);
+    }
+  }
+
   async create(req: Request, res: Response, _next: NextFunction) {
     try {
       const scheduled = await this.service.createScheduledAppointment(req.body);
