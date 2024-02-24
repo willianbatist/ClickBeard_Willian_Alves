@@ -9,7 +9,7 @@ ScheduledAppointmentRouter.post("/scheduledAppointment", validateJWT, validateCr
   ScheduledAppointmentFactory().create(req, res, next)
 })
 
-ScheduledAppointmentRouter.get("/scheduledAppointment", validateJWT, (req, res, next) => {
+ScheduledAppointmentRouter.get("/scheduledAppointment/:id", validateJWT, (req, res, next) => {
   ScheduledAppointmentFactory().findScheduledBarber(req, res, next)
 })
 

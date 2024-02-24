@@ -2,7 +2,7 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../../contexts/contextProvider";
 import HomeAdmin from "./HomeAdmin";
-import HomeCustomer from "./HomeCustomer";
+import HomeCustomer from "./HomeCustomer.jsx";
 import { useNavigate } from "react-router-dom";
 
 function Home() {

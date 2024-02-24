@@ -27,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/register-barber",
         element: <RegisterBarber/>,
+      },
+      {
+        path: "/my-schedules",
+        element: <h1>Deu certo</h1>,
       }
     ]
   },

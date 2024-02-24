@@ -10,7 +10,7 @@ export default class ScheduledAppointmentController {
     try {
       const { id } = req.params;
       const find = await this.service.findScheduledBarber(id);
-      return find
+      return res.status(200).json(find);
     } catch (error) {
       return res.status(400).json(error);
     }
