@@ -13,4 +13,8 @@ ScheduledAppointmentRouter.get("/scheduledAppointment/:id", validateJWT, (req, r
   ScheduledAppointmentFactory().findScheduledBarber(req, res, next)
 })
 
+ScheduledAppointmentRouter.get("/scheduledAppointment/customer/:id", validateJWT, (req, res, next) => {
+  ScheduledAppointmentFactory().findScheduledCustomer(req, res, next)
+})
+
 export default ScheduledAppointmentRouter;
