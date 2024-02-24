@@ -10,7 +10,7 @@ ScheduledAppointmentRouter.post("/scheduledAppointment", validateJWT, validateCr
 })
 
 ScheduledAppointmentRouter.get("/scheduledAppointment", validateJWT, (req, res, next) => {
-  ScheduledAppointmentFactory().create(req, res, next)
+  ScheduledAppointmentFactory().findScheduledBarber(req, res, next)
 })
 
 export default ScheduledAppointmentRouter;
