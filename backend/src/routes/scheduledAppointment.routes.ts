@@ -17,4 +17,8 @@ ScheduledAppointmentRouter.get("/scheduledAppointment/customer/:id", validateJWT
   ScheduledAppointmentFactory().findScheduledCustomer(req, res, next)
 })
 
+ScheduledAppointmentRouter.delete("/scheduledAppointment/customer/delete/:id", validateJWT, (req, res, next) => {
+  ScheduledAppointmentFactory().deleteScheduled(req, res, next);
+})
+
 export default ScheduledAppointmentRouter;

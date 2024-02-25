@@ -14,10 +14,12 @@ export interface IScheduledAppointmentModel {
   create(data: IScheduledAppointment): Promise<IScheduledAppointment | null>;
   findScheduledBarber(id:string): Promise<IScheduledAppointment[] | null>;
   findScheduledCustomer(id:string): Promise<IScheduledAppointment[] | null>;
+  deleteScheduled(id: string): Promise<unknown>;
 }
 
 export interface IScheduledAppointmentService {
   createScheduledAppointment(data: IScheduledAppointment): Promise<IScheduledAppointment | null>;
   findScheduledBarber(id:string): Promise<IScheduledAppointment[] | null>;
   findScheduledCustomer(id:string): Promise<IScheduledAppointment[] | null>;
+  deleteScheduled(id: string): Promise<unknown>;
 }

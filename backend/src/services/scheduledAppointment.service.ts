@@ -10,6 +10,10 @@ export default class ScheduledAppointmentService
   constructor(private repository: IScheduledAppointmentModel) {
     this.repository = repository;
   }
+  async deleteScheduled(id: string): Promise<unknown> {
+    const del = await this.repository.deleteScheduled(id);
+    return del
+  }
   async findScheduledCustomer(user_id: string): Promise<IScheduledAppointment[] | null> {
     const find = await this.repository.findScheduledCustomer(user_id);
     return find

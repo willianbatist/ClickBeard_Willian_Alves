@@ -6,10 +6,19 @@ export default class ScheduledAppointmentController {
     this.service = service;
   }
 
+  async deleteScheduled(req: Request, res: Response, _next: NextFunction) {
+    try {
+      const { id } = req.params;
+      const del = await this.service.deleteScheduled(id);
+      return res.status(200).json(del);
+    } catch (error) {
+      return res.status(400).json(error);
+    }
+  }
+
   async findScheduledCustomer(req: Request, res: Response, _next: NextFunction) {
     try {
       const { id } = req.params;
-      console.log(id);
       const find = await this.service.findScheduledCustomer(id);
       return res.status(200).json(find);
     } catch (error) {
