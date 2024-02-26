@@ -9,6 +9,10 @@ const prisma = new PrismaClient();
 export default class ScheduledAppointmentRepository
   implements IScheduledAppointmentModel
 {
+  async findAll(): Promise<IScheduledAppointment[] | null> {
+    const find = await prisma.scheduledAppointment.findMany();
+    return find;
+  }
   async deleteScheduled(id: string): Promise<unknown> {
     const del = await prisma.scheduledAppointment.delete({ where: { id } });
     return del;

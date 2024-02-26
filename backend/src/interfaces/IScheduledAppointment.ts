@@ -15,6 +15,7 @@ export interface IScheduledAppointmentModel {
   findScheduledBarber(id:string): Promise<IScheduledAppointment[] | null>;
   findScheduledCustomer(id:string): Promise<IScheduledAppointment[] | null>;
   deleteScheduled(id: string): Promise<unknown>;
+  findAll(): Promise<IScheduledAppointment[] | null>;
 }
 
 export interface IScheduledAppointmentService {
@@ -22,4 +23,5 @@ export interface IScheduledAppointmentService {
   findScheduledBarber(id:string): Promise<IScheduledAppointment[] | null>;
   findScheduledCustomer(id:string): Promise<IScheduledAppointment[] | null>;
   deleteScheduled(id: string): Promise<unknown>;
+  findAll(): Promise<IScheduledAppointment[] | null>;
 }
