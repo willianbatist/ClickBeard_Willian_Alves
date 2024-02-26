@@ -32,7 +32,7 @@ Este repositório contem o **Projeto Catálogo de automóveis** que reúne o apr
 
 Para da start no projeto, basta realizar o download ou clonar esse repositório.
 
-Dentro do repositório **Backend**, entre na pasta backend no terminal e instale as lib:
+Dentro do repositório entre na pasta **backend** no terminal e instale as lib:
 
     npm install
 
