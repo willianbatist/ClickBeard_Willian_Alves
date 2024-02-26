@@ -12,7 +12,7 @@ export const ContainerSchedules = styled.div`
 export const Container = styled.div`
   background-color: white;
   width: 500px;
-  height: 700px;
+  height: 600px;
   margin-top: 120px;
   margin-bottom: 20px;
   display: flex;

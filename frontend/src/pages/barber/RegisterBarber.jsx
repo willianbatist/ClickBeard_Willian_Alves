@@ -70,7 +70,7 @@ function RegisterBarber() {
           <h1>Cadastrar Barbeiro</h1>
           <span>Nome:</span>
           <Input
-            _placeholder={{ color: '#18382d' }}
+            _placeholder={{ color: "#18382d" }}
             focusBorderColor="#18382d"
             width={"80%"}
             {...register("name", { required: "Nome é obrigatório" })}
@@ -83,7 +83,7 @@ function RegisterBarber() {
             type="number"
             width={"80%"}
             {...register("age", { required: "Idade é obrigatória" })}
-            _placeholder={{ color: '#18382d' }}
+            _placeholder={{ color: "#18382d" }}
             placeholder="Idade"
           />
           {errors.age && <p>{errors.age.message}</p>}
@@ -95,7 +95,7 @@ function RegisterBarber() {
             {...register("dateHire", {
               required: "Data da contratação é obrigatória",
             })}
-            _placeholder={{ color: '#18382d' }}
+            _placeholder={{ color: "#18382d" }}
             placeholder="Data da contratação"
           />
           {errors.dateHire && <p>{errors.dateHire.message}</p>}
@@ -110,7 +110,7 @@ function RegisterBarber() {
                 setSpecialty(e.target.value);
                 setErr(false);
               }}
-              _placeholder={{ color: '#18382d' }}
+              _placeholder={{ color: "#18382d" }}
               placeholder="Adicione uma especialidade"
             />
             <InputRightElement width="4.5rem">

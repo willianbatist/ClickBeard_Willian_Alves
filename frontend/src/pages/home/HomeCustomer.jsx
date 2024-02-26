@@ -3,7 +3,13 @@ import HeaderCustomer from "../../components/header/HeaderCustomer";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../contexts/contextProvider";
 import { useNavigate } from "react-router-dom";
-import { ContainerCustomer, ContainerSchedule } from "./homeCustomer.styles.js";
+import {
+  ContainerCustomer,
+  ContainerSchedule,
+  Options,
+  ContainerButton,
+  ContainerOptions,
+} from "./homeCustomer.styles.js";
 import { Select, Input, Button } from "@chakra-ui/react";
 import { sendRequest, requestToken } from "../../services/index.js";
 import { useForm } from "react-hook-form";
@@ -135,56 +141,72 @@ function HomeCustomer() {
         <ContainerSchedule>
           <h1>Agendar corte</h1>
           <h2>Aberto todos os dias das 8:00h às 18:00h</h2>
-          <span>Horário:</span>
-          <Input
-            placeholder="Selecione Data e Hora"
-            size="md"
-            {...register("date", { required: "Horário é obrigatório" })}
-            type="datetime-local"
-          />
-          {errors.date && <p>{errors.date.message}</p>}
-          <span>Especialidade:</span>
-          <Select
-            placeholder="Selecione uma opção"
-            {...register("specialty", {
-              required: "Especialidade é obrigatório",
-            })}
-            onClick={(e) => {
-              setSpecialty(e.target.value);
-            }}
-          >
-            {!isLoading &&
-              specialties?.map((item) => (
-                <option value={item} key={item}>
-                  {item}
-                </option>
-              ))}
-          </Select>
-          {errors.specialty && <p>{errors.specialty.message}</p>}
-          <span>Barbeiro:</span>
-          <Select
-            {...register("barber_id", {
-              required: "Escolher um barbeiro é obrigatório",
-            })}
-            placeholder="Selecione uma opção"
-          >
-            {!isLoadingFilter &&
-              filterBarbers?.map((barber) => (
-                <option value={barber.id} key={barber.id}>
-                  {barber.name}
-                </option>
-              ))}
-          </Select>
-          {errors.barber_id && <p>{errors.barber_id.message}</p>}
-          <Button
-            type="submit"
-            backgroundColor="#18382d"
-            color="white"
-            width={"100px"}
-            onClick={handleSubmit(onSubmit)}
-          >
-            Cadastrar
-          </Button>
+          <ContainerOptions>
+            <Options>
+              <span>Horário:</span>
+              <Input
+                _placeholder={{ color: "#18382d" }}
+                width={"100%"}
+                placeholder="Selecione Data e Hora"
+                size="md"
+                {...register("date", { required: "Horário é obrigatório" })}
+                type="datetime-local"
+              />
+              {errors.date && <p>{errors.date.message}</p>}
+            </Options>
+            <Options>
+              <span>Especialidade:</span>
+              <Select
+                _placeholder={{ color: "#18382d" }}
+                width={"100%"}
+                placeholder="Selecione uma opção"
+                {...register("specialty", {
+                  required: "Especialidade é obrigatório",
+                })}
+                onClick={(e) => {
+                  setSpecialty(e.target.value);
+                }}
+              >
+                {!isLoading &&
+                  specialties?.map((item) => (
+                    <option value={item} key={item}>
+                      {item}
+                    </option>
+                  ))}
+              </Select>
+              {errors.specialty && <p>{errors.specialty.message}</p>}
+            </Options>
+            <Options>
+              <span>Barbeiro:</span>
+              <Select
+                _placeholder={{ color: "#18382d" }}
+                width={"100%"}
+                {...register("barber_id", {
+                  required: "Escolher um barbeiro é obrigatório",
+                })}
+                placeholder="Selecione uma opção"
+              >
+                {!isLoadingFilter &&
+                  filterBarbers?.map((barber) => (
+                    <option value={barber.id} key={barber.id}>
+                      {barber.name}
+                    </option>
+                  ))}
+              </Select>
+              {errors.barber_id && <p>{errors.barber_id.message}</p>}
+            </Options>
+          </ContainerOptions>
+          <ContainerButton>
+            <Button
+              type="submit"
+              backgroundColor="#18382d"
+              color="white"
+              width={"100px"}
+              onClick={handleSubmit(onSubmit)}
+            >
+              Cadastrar
+            </Button>
+          </ContainerButton>
         </ContainerSchedule>
       </ContainerCustomer>
     </>
