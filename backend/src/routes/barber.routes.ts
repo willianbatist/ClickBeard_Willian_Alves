@@ -17,4 +17,8 @@ barberRouter.get('/barber/:id', validateJWT, (req, res, next) => {
   BarberFactory().findUnique(req, res, next);
 })
 
+barberRouter.delete('/barber/delete/:id', validateJWT, (req, res, next) => {
+  BarberFactory().deleteBarber(req, res, next);
+})
+
 export default barberRouter;
