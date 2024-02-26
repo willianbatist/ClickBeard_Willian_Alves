@@ -86,4 +86,6 @@ As linhas indicam relacionamentos entre as entidades:
 
 O backend é organizado em três grupos principais de rotas: *userRouter*, *barberRouter* e *ScheduledAppointmentRouter*. Cada um desses grupos de rotas oferece funcionalidades para listar, listar por ID, criar e excluir recursos relacionados a usuários, barbeiros e agendamentos. É necessário que os usuários autentiquem-se com um token válido para acessar a API. Além disso, as senhas dos usuários são armazenadas de forma criptografada para garantir a segurança dos dados.
 
+OBSERVAÇÃO: Para facilitar a avaliação do projeto e reduzir a complexidade de configuração, optei por incluir o arquivo *.env* no repositório do projeto, contendo a URL do banco de dados de forma pública. Nesse contexto de teste, decidi não utilizar variáveis de ambiente, simplificando assim o processo de avaliação.
+
 
