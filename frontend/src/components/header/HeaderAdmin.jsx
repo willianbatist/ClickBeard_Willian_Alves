@@ -12,7 +12,7 @@ function HeaderAdmin() {
             <Link onClick={ () => navigate("/") }>Barbeiros</Link>
           </li>
           <li>
-            <Link onClick={ () => navigate("/teste") }>Agendamentos</Link>
+            <Link onClick={ () => navigate("/schedules") }>Agendamentos</Link>
           </li>
           <li>
             <Link onClick={ () => navigate("/register-barber") }>Cadastrar</Link>

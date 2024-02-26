@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { useToast } from "@chakra-ui/react";
 
 export const useCustomToast = () => {
@@ -140,5 +141,41 @@ export function sortAppointments(schedules) {
       return -1;
     }
     return 0;
+  });
+}
+
+export function getUniqueDates(appointments) {
+  const dateSet = new Set();
+
+  return appointments.map(appointment => {
+    const date = appointment.date.split("T")[0];
+    if (!dateSet.has(date)) {
+      dateSet.add(date);
+      return date;
+    }
+  }).filter(date => date)
+    .sort((a, b) => new Date(a) - new Date(b));
+
+}
+
+export function formatDateNotHours(dateString) {
+  let dateParts = dateString.split("-");
+  
+  let year = dateParts[0];
+  let month = dateParts[1];
+  let day = dateParts[2];
+  let formattedDate = day + "/" + month + "/" + year;
+
+  return formattedDate;
+}
+
+export function filterDates(appointments, date) {
+  if (date === "all") {
+    return appointments;
+  }
+
+  return appointments.filter(appointment => {
+    const appointmentDate = appointment.date.split("T")[0]; // Pega apenas a parte da data
+    return appointmentDate === date;
   });
 }

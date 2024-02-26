@@ -4,10 +4,13 @@ export const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [user, setUser] = useState();
+  const [barbers, setBarbers] = useState();
 
   const context = {
     user,
     setUser,
+    barbers,
+    setBarbers
   }
 
   return (

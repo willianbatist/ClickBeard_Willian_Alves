@@ -38,12 +38,8 @@ ScheduledAppointmentRouter.delete(
   }
 );
 
-ScheduledAppointmentRouter.get(
-  "/scheduledAppointment",
-  validateJWT,
-  (req, res, next) => {
-    ScheduledAppointmentFactory().findAll(req, res, next);
-  }
-);
+ScheduledAppointmentRouter.get("/scheduledAppointment", validateJWT, (req, res, next) => {
+  ScheduledAppointmentFactory().findAll(req, res, next);
+});
 
 export default ScheduledAppointmentRouter;

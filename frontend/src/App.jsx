@@ -7,6 +7,7 @@ import Login from "./pages/login/Login";
 import Singup from "./pages/singup/Singup";
 import RegisterBarber from "./pages/barber/RegisterBarber";
 import Schedules from "./pages/schedules/Schedules";
+import SchedulesAdmin from "./pages/schedules/SchedulesAdmin";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/my-schedules",
         element: <Schedules/>,
+      },
+      {
+        path: "/schedules",
+        element: <SchedulesAdmin/>,
       }
     ]
   },
