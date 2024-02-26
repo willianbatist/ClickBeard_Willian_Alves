@@ -42,7 +42,7 @@ Para roda o banco de dados:
 
 Para subir as tabelas:
 
-    prisma migrate deploy
+    npx prisma migrate deploy
 
 É necessario popular o banco com algumas informações, suba a seed com o comando:
 
