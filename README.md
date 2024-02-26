@@ -62,6 +62,16 @@ E depois:
 
     npm start
 
+disponível em: http://localhost:3000/
+
+## Acesso Admin no Sistema
+
+  *obs: não é possivel cria user admin pelo sistema, apenas cliente:*
+  
+email: admin@clickbeard.com
+senha: 123456
+
+
 ## Banco de dados
 
 
