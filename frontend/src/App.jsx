@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Singup from "./pages/singup/Singup";
 import RegisterBarber from "./pages/barber/RegisterBarber";
+import Schedules from "./pages/schedules/Schedules";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-schedules",
-        element: <h1>Deu certo</h1>,
+        element: <Schedules/>,
       }
     ]
   },

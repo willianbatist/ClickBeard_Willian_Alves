@@ -13,7 +13,7 @@ function HeaderCustomer() {
             <Link onClick={() => navigate("/")}>Agendar</Link>
           </li>
           <li>
-            <Link onClick={() => navigate("/teste")}>Meus agendamentos</Link>
+            <Link onClick={() => navigate("/my-schedules")}>Meus agendamentos</Link>
           </li>
           <li>
             <Link onClick={() => navigate("/login")}>Sair</Link>
