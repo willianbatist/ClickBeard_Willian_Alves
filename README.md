@@ -62,4 +62,28 @@ E depois:
 
     npm start
 
+## Banco de dados
+
+
+![Captura de Tela (8)](https://github.com/willianbatist/ClickBeard_Willian_Alves/assets/91439283/e1437b2a-a5ae-46d4-b44f-b717f79d3aae)
+
+Este diagrama representa três entidades principais:
+
+User: Representa os usuários do sistema, que têm um ID exclusivo, nome, e-mail, senha, função (role), e data de criação. Cada usuário pode ter vários agendamentos (ScheduledAppointments).
+
+Barber: Representa os barbeiros do sistema, que também têm um ID exclusivo, nome, idade, data de contratação, especialidades, e datas de criação e atualização. Cada barbeiro pode ter vários agendamentos (ScheduledAppointments).
+
+ScheduledAppointment: Representa os agendamentos marcados pelos usuários. Cada agendamento tem um ID exclusivo, uma data, um usuário associado e um barbeiro associado.
+
+As linhas indicam relacionamentos entre as entidades:
+
+  - Um agendamento (ScheduledAppointment) está associado a um único usuário (User) e a um único barbeiro (Barber).
+  - Um usuário (User) pode ter vários agendamentos (ScheduledAppointments).
+  - Um barbeiro (Barber) também pode ter vários agendamentos (ScheduledAppointments).
+
+
+## Backend
+
+O backend é organizado em três grupos principais de rotas: *userRouter*, *barberRouter* e *ScheduledAppointmentRouter*. Cada um desses grupos de rotas oferece funcionalidades para listar, listar por ID, criar e excluir recursos relacionados a usuários, barbeiros e agendamentos. É necessário que os usuários autentiquem-se com um token válido para acessar a API. Além disso, as senhas dos usuários são armazenadas de forma criptografada para garantir a segurança dos dados.
+
 
