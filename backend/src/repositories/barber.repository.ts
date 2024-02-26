@@ -5,6 +5,7 @@ const prisma = new PrismaClient();
 
 export default class BarberRepository implements IBarberModel {
   async deleteBarber(id: string): Promise<unknown> {
+    await prisma.scheduledAppointment.deleteMany({ where: { barber_id: id } })
     const del = await prisma.barber.delete({ where: { id } });
     return del;
   }
