@@ -53,3 +53,13 @@ Agora basta da start no backend:
     npm start
 
 vai ficar ativo na rota:  http://localhost:3001/
+
+Para rodar o Frontend basta, entre no repositório do frontend e em seguida:
+
+    npm install
+
+E depois:
+
+    npm start
+
+
